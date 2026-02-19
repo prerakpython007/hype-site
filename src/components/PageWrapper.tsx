@@ -32,10 +32,12 @@ export default function PageWrapper() {
       <div
         className="relative z-200 min-h-screen bg-[#4e55e0]"
         style={{
-          clipPath: revealPage
-            ? "circle(150vmax at 50vw 50vh)"
-            : "circle(0px at 50vw 50vh)",
-          transition: revealPage
+          clipPath: introDone
+            ? "none"
+            : revealPage
+              ? "circle(150vmax at 50vw 50vh)"
+              : "circle(0px at 50vw 50vh)",
+          transition: revealPage && !introDone
             ? "clip-path 1.4s cubic-bezier(0.22, 1, 0.36, 1)"
             : "none",
         }}

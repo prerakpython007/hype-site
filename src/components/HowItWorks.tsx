@@ -1,30 +1,30 @@
 const steps = [
   {
     step: "01",
-    title: "Create Your Account",
+    title: "Download the App",
     description:
-      "Sign up in seconds with just your email. No credit card required to get started.",
+      "Get Hype for free on iOS or Android. Create your account in seconds and you're ready to go.",
     color: "text-lime",
   },
   {
     step: "02",
-    title: "Set Up Your Project",
+    title: "Set Your Habits",
     description:
-      "Connect your tools, import your data, and configure your workspace in minutes.",
+      "Pick from popular habits or create your own. Set frequency, reminders, and daily goals that fit your life.",
     color: "text-gold",
   },
   {
     step: "03",
-    title: "Build & Iterate",
+    title: "Check In Daily",
     description:
-      "Use our powerful APIs and intuitive dashboard to build, test, and deploy at speed.",
+      "Tap to complete your habits each day. Build streaks, earn rewards, and watch your consistency grow.",
     color: "text-pink",
   },
   {
     step: "04",
-    title: "Scale & Grow",
+    title: "Level Up",
     description:
-      "Go from zero to millions of users. Our infrastructure scales automatically with you.",
+      "Track your progress over time, unlock achievements, and join a community that keeps you motivated.",
     color: "text-lime",
   },
 ];
@@ -39,11 +39,11 @@ export default function HowItWorks() {
             How it Works
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Up and running in minutes
+            Start building habits in minutes
           </h2>
           <p className="mt-4 text-lg text-muted">
             Getting started with Hype is simple. Four easy steps and you&apos;re
-            ready to go.
+            on your way to a better you.
           </p>
         </div>
 

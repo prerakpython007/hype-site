@@ -44,20 +44,20 @@ export default function IntroAnimation({ onComplete, onRevealPage, onMusicStart 
     setJittering(false);
     // Lime
     setCircleStage(1);
-    // Pink
-    setTimeout(() => setCircleStage(2), 500);
-    // Gold
-    setTimeout(() => setCircleStage(3), 1000);
+    // Pink (starts when lime is ~20% expanded)
+    setTimeout(() => setCircleStage(2), 300);
+    // Gold (starts when pink is ~20% expanded)
+    setTimeout(() => setCircleStage(3), 600);
     // Page reveal (mask circle)
     setTimeout(() => {
       setCircleStage(4);
       onRevealPage();
-    }, 1500);
+    }, 900);
     // Done
     setTimeout(() => {
       setCircleStage(5);
       onComplete();
-    }, 3400);
+    }, 2400);
   }, [onComplete, onRevealPage]);
 
   const playMusic = useCallback(() => {
@@ -75,13 +75,13 @@ export default function IntroAnimation({ onComplete, onRevealPage, onMusicStart 
     setClicks(newClicks);
 
     if (newClicks >= CLICKS_TO_JITTER) {
+      playMusic();
       setStraightening(true);
       setRotation(0);
       setScale(JITTER_SCALE);
       setTimeout(() => {
         setStraightening(false);
         setJittering(true);
-        playMusic();
         setTimeout(() => startCircles(), JITTER_DURATION);
       }, 400);
     } else {

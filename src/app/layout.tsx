@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hype - Build the Future",
+  title: "Hype - Build Better Habits",
   description:
-    "The all-in-one platform that supercharges your workflow. Ship faster, collaborate smarter, and scale without limits.",
+    "The habit tracker that actually keeps you going. Set goals, track streaks, and stay motivated with a community that hypes you up.",
 };
 
 export default function RootLayout({

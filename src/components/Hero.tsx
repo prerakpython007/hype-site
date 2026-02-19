@@ -12,19 +12,19 @@ export default function Hero() {
         {/* Badge */}
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-white/10 px-4 py-1.5 text-sm text-white">
           <span className="h-2 w-2 rounded-full bg-lime" />
-          Now in Public Beta
+          Available on iOS & Android
         </div>
 
         {/* Headline */}
         <h1 className="mx-auto max-w-4xl text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Build the Future with{" "}
+          Build Better Habits with{" "}
           <span className="text-lime">Hype</span>
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          The all-in-one platform that supercharges your workflow. Ship faster,
-          collaborate smarter, and scale without limits.
+          The habit tracker that actually keeps you going. Set goals, track
+          streaks, and stay motivated with a community that hypes you up.
         </p>
 
         {/* CTA Buttons */}
@@ -33,7 +33,7 @@ export default function Hero() {
             href="#cta"
             className="w-full rounded-full bg-lime px-8 py-3.5 text-base font-semibold text-accent transition-opacity hover:opacity-90 sm:w-auto"
           >
-            Start for Free
+            Download Free
           </a>
           <a
             href="#features"
@@ -47,9 +47,9 @@ export default function Hero() {
         <div className="mt-20 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4">
           {[
             { value: "10K+", label: "Active Users" },
-            { value: "99.9%", label: "Uptime" },
-            { value: "50M+", label: "API Calls/Day" },
-            { value: "4.9/5", label: "User Rating" },
+            { value: "2M+", label: "Habits Tracked" },
+            { value: "87%", label: "Streak Retention" },
+            { value: "4.9/5", label: "App Store Rating" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-2xl font-bold text-white sm:text-3xl">

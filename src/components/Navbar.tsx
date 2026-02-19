@@ -177,34 +177,81 @@ export default function Navbar({ audio }: NavbarProps) {
 
       {/* Layer 3: Nav items */}
       <div
-        className={`fixed inset-0 z-42 flex flex-col items-center justify-center gap-2 ${
+        className={`fixed inset-0 z-42 flex flex-col justify-center gap-2 ${
           isLimeVisible ? "visible" : "invisible pointer-events-none"
         }`}
       >
-        {navLinks.map((link, i) => (
-          <a
-            key={link.label}
-            href={link.href}
-            onClick={handleLinkClick}
-            className="group relative overflow-hidden px-6 py-4"
-          >
-            <span
-              className={`block text-5xl font-bold uppercase tracking-tight transition-all duration-500 ease-out sm:text-6xl lg:text-7xl ${
+        {navLinks.map((link, i) => {
+          const ticker = Array(12).fill(link.label).join(" · ") + " · ";
+          return (
+            <div
+              key={link.label}
+              className={`transition-all duration-500 ease-out ${
                 areItemsVisible
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-16 opacity-0"
-              } text-black group-hover:text-white`}
+              }`}
               style={{
                 transitionDelay: areItemsVisible
                   ? `${i * 100}ms`
                   : `${(navLinks.length - 1 - i) * 60}ms`,
               }}
             >
-              {link.label}
-            </span>
-          </a>
-        ))}
+              <a
+                href={link.href}
+                onClick={handleLinkClick}
+                className="group flex w-full items-stretch"
+              >
+                {/* Left ticker */}
+                <div className="flex flex-1 items-center overflow-hidden bg-black transition-colors duration-300 group-hover:bg-lime">
+                  <div className="ticker-scroll-left flex whitespace-nowrap">
+                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
+                      {ticker}
+                    </span>
+                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
+                      {ticker}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Center text */}
+                <span className="w-65 shrink-0 bg-lime px-5 py-3 text-center text-4xl font-bold uppercase tracking-tight text-black transition-colors duration-300 group-hover:bg-black group-hover:text-lime sm:w-100 sm:px-10 sm:py-4 sm:text-5xl lg:w-145 lg:text-7xl">
+                  {link.label}
+                </span>
+
+                {/* Right ticker */}
+                <div className="flex flex-1 items-center overflow-hidden bg-black transition-colors duration-300 group-hover:bg-lime">
+                  <div className="ticker-scroll-right flex whitespace-nowrap">
+                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
+                      {ticker}
+                    </span>
+                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
+                      {ticker}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          );
+        })}
       </div>
+
+      <style jsx>{`
+        @keyframes ticker-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes ticker-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .ticker-scroll-left {
+          animation: ticker-left 20s linear infinite;
+        }
+        .ticker-scroll-right {
+          animation: ticker-right 20s linear infinite;
+        }
+      `}</style>
     </>
   );
 }

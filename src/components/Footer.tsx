@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const footerLinks = {
-  Product: ["Features", "Pricing", "Changelog", "Documentation", "API Reference"],
+  App: ["Features", "Pricing", "Changelog", "Download iOS", "Download Android"],
   Company: ["About", "Blog", "Careers", "Press", "Contact"],
-  Legal: ["Privacy", "Terms", "Security", "GDPR"],
+  Legal: ["Privacy", "Terms", "Security"],
 };
 
 export default function Footer() {
@@ -18,8 +18,8 @@ export default function Footer() {
               Hype
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              The all-in-one platform that supercharges your workflow. Build
-              faster, ship smarter.
+              The habit tracker that keeps you going. Build better habits, stay
+              consistent, and become your best self.
             </p>
           </div>
 

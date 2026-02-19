@@ -12,11 +12,11 @@ export default function CTA() {
 
           <div className="relative px-8 py-16 text-center sm:px-16 sm:py-24">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Ready to get started?
+              Ready to build better habits?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-              Join thousands of developers and teams already building with Hype.
-              Start for free, scale when you&apos;re ready.
+              Join thousands of people already crushing their goals with Hype.
+              Download for free and start your journey today.
             </p>
 
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -24,18 +24,18 @@ export default function CTA() {
                 href="#"
                 className="w-full rounded-full bg-lime px-8 py-3.5 text-base font-semibold text-accent transition-opacity hover:opacity-90 sm:w-auto"
               >
-                Start Building for Free
+                Download for Free
               </a>
               <a
                 href="#"
                 className="w-full rounded-full border border-white/30 px-8 py-3.5 text-base font-medium text-white transition-colors hover:bg-white/10 sm:w-auto"
               >
-                Talk to Sales
+                View on App Store
               </a>
             </div>
 
             <p className="mt-6 text-sm text-muted">
-              No credit card required. Free tier includes 10K API calls/month.
+              Free forever. No ads. Premium features available for power users.
             </p>
           </div>
         </div>

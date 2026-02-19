@@ -1,25 +1,25 @@
 const testimonials = [
   {
     quote:
-      "Hype completely transformed how our team ships products. We went from monthly releases to daily deployments.",
+      "I've tried every habit app out there. Hype is the first one that actually made me stick with my morning routine for over 6 months.",
     name: "Sarah Chen",
-    role: "CTO at Nexora",
+    role: "Fitness Enthusiast",
     initials: "SC",
     avatarBg: "bg-lime",
   },
   {
     quote:
-      "The developer experience is unmatched. Clean APIs, great docs, and the support team actually responds within minutes.",
+      "The streak system is addictive in the best way. I went from reading 0 books to finishing 2 a month. Hype just hits different.",
     name: "Marcus Johnson",
-    role: "Lead Engineer at Flowstate",
+    role: "College Student",
     initials: "MJ",
     avatarBg: "bg-gold",
   },
   {
     quote:
-      "We scaled from 1K to 500K users without changing a single line of infrastructure code. That's the Hype difference.",
+      "The community feature is what sets Hype apart. Having people cheer you on when you complete a habit is genuinely motivating.",
     name: "Aisha Patel",
-    role: "Founder of Lumos",
+    role: "Wellness Coach",
     initials: "AP",
     avatarBg: "bg-pink",
   },
@@ -35,10 +35,10 @@ export default function Testimonials() {
             Testimonials
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Loved by builders
+            Loved by habit builders
           </h2>
           <p className="mt-4 text-lg text-muted">
-            See what developers and teams are saying about Hype.
+            See what real users are saying about their Hype journey.
           </p>
         </div>
 
