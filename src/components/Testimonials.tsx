@@ -47,7 +47,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="rounded-2xl border border-border bg-white/5 p-8"
+              className="rounded-2xl border border-border bg-white/5 p-5 sm:p-8"
             >
               {/* Stars */}
               <div className="flex gap-1 text-gold">

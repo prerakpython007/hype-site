@@ -134,7 +134,7 @@ export default function IntroAnimation({ onComplete, onRevealPage, onMusicStart 
           height={180}
           priority
           draggable={false}
-          className="select-none"
+          className="h-28! w-28! select-none sm:h-44! sm:w-44!"
         />
       </div>
 

@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="mx-auto max-w-4xl text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+        <h1 className="mx-auto max-w-4xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
           Build Better Habits with{" "}
           <span className="text-lime">Hype</span>
         </h1>

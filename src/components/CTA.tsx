@@ -10,7 +10,7 @@ export default function CTA() {
             <div className="absolute left-1/4 bottom-1/4 h-40 w-40 rounded-full bg-gold/10 blur-3xl" />
           </div>
 
-          <div className="relative px-8 py-16 text-center sm:px-16 sm:py-24">
+          <div className="relative px-5 py-12 text-center sm:px-16 sm:py-24">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Ready to build better habits?
             </h2>

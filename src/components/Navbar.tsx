@@ -175,14 +175,45 @@ export default function Navbar({ audio }: NavbarProps) {
         }`}
       />
 
+      {/* Ticker keyframes */}
+      <style>{`
+        @keyframes ticker-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes ticker-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
+
       {/* Layer 3: Nav items */}
       <div
-        className={`fixed inset-0 z-42 flex flex-col justify-center gap-2 ${
+        className={`fixed inset-0 z-42 flex flex-col justify-center gap-3 overflow-hidden py-24 ${
           isLimeVisible ? "visible" : "invisible pointer-events-none"
         }`}
       >
         {navLinks.map((link, i) => {
-          const ticker = Array(12).fill(link.label).join(" · ") + " · ";
+          const evenRow = i % 2 === 0;
+          const sideCount = 10;
+          const sides = Array.from({ length: sideCount }, (_, j) => {
+            const isLimeBg = evenRow ? j % 2 === 0 : j % 2 !== 0;
+            return isLimeBg
+              ? "bg-lime text-black group-hover:bg-black group-hover:text-lime"
+              : "bg-black text-lime group-hover:bg-lime group-hover:text-black";
+          });
+          const speed = 80 + i * 10;
+
+          const renderRects = (rects: string[]) =>
+            [...rects, ...rects].map((bg, j) => (
+              <span
+                key={j}
+                className={`flex shrink-0 items-center justify-center rounded-xl px-3 py-1.5 text-base font-bold uppercase tracking-tight transition-colors duration-300 sm:rounded-2xl sm:px-5 sm:py-2 sm:text-3xl md:px-8 md:py-3 md:text-5xl lg:px-10 lg:text-7xl ${bg}`}
+              >
+                {link.label}
+              </span>
+            ));
+
           return (
             <div
               key={link.label}
@@ -200,34 +231,34 @@ export default function Navbar({ audio }: NavbarProps) {
               <a
                 href={link.href}
                 onClick={handleLinkClick}
-                className="group flex w-full items-stretch"
+                className="group flex w-full items-stretch justify-center"
               >
                 {/* Left ticker */}
-                <div className="flex flex-1 items-center overflow-hidden bg-black transition-colors duration-300 group-hover:bg-lime">
-                  <div className="ticker-scroll-left flex whitespace-nowrap">
-                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
-                      {ticker}
-                    </span>
-                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
-                      {ticker}
-                    </span>
+                <div className="flex flex-1 overflow-hidden">
+                  <div
+                    className="flex h-full items-center gap-3"
+                    style={{
+                      animation: `${evenRow ? "ticker-left" : "ticker-right"} ${speed}s linear infinite`,
+                    }}
+                  >
+                    {renderRects(sides)}
                   </div>
                 </div>
 
-                {/* Center text */}
-                <span className="w-65 shrink-0 bg-lime px-5 py-3 text-center text-4xl font-bold uppercase tracking-tight text-black transition-colors duration-300 group-hover:bg-black group-hover:text-lime sm:w-100 sm:px-10 sm:py-4 sm:text-5xl lg:w-145 lg:text-7xl">
+                {/* Center */}
+                <span className="z-10 flex w-36 shrink-0 items-center justify-center whitespace-nowrap text-xl font-bold uppercase tracking-tight text-black transition-colors duration-300 group-hover:bg-black group-hover:text-lime sm:w-52 sm:text-3xl md:w-96 md:text-5xl lg:w-xl lg:text-7xl">
                   {link.label}
                 </span>
 
                 {/* Right ticker */}
-                <div className="flex flex-1 items-center overflow-hidden bg-black transition-colors duration-300 group-hover:bg-lime">
-                  <div className="ticker-scroll-right flex whitespace-nowrap">
-                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
-                      {ticker}
-                    </span>
-                    <span className="px-2 text-lg font-bold uppercase tracking-tight text-lime transition-colors duration-300 group-hover:text-black sm:text-xl lg:text-2xl">
-                      {ticker}
-                    </span>
+                <div className="flex flex-1 overflow-hidden">
+                  <div
+                    className="flex h-full items-center gap-3"
+                    style={{
+                      animation: `${evenRow ? "ticker-right" : "ticker-left"} ${speed}s linear infinite`,
+                    }}
+                  >
+                    {renderRects(sides)}
                   </div>
                 </div>
               </a>
@@ -235,23 +266,6 @@ export default function Navbar({ audio }: NavbarProps) {
           );
         })}
       </div>
-
-      <style jsx>{`
-        @keyframes ticker-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes ticker-right {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
-        .ticker-scroll-left {
-          animation: ticker-left 20s linear infinite;
-        }
-        .ticker-scroll-right {
-          animation: ticker-right 20s linear infinite;
-        }
-      `}</style>
     </>
   );
 }
