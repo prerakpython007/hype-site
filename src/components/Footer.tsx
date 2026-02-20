@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <a href="#" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white">
               <Image src="/hype-logo.png" alt="Hype logo" width={32} height={32} />
-              Hype
+              <span className="font-obviously italic">HYPE!</span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               The habit tracker that keeps you going. Build better habits, stay
@@ -46,7 +46,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted">
-            &copy; {new Date().getFullYear()} Hype. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="font-obviously italic">HYPE!</span> All rights reserved.
           </p>
           <div className="flex gap-6">
             {/* Twitter/X */}

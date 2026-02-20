@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Obviously";
+  src: url("/fonts/obviously-font-1768739370-0/ObviouslyDemo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Obviously";
+  src: url("/fonts/obviously-font-1768739370-0/ObviouslyDemo-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Obviously";
+  src: url("/fonts/obviously-font-1768739370-0/ObviouslyDemo-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Obviously";
+  src: url("/fonts/obviously-font-1768739370-0/ObviouslyDemo-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --background: #4e55e0;
   --foreground: #ffffff;
@@ -22,8 +54,9 @@
   --color-pink: var(--pink);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-mono: monospace;
+  --font-obviously: "Obviously", sans-serif;
 }
 
 html {

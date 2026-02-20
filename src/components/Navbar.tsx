@@ -189,7 +189,7 @@ export default function Navbar({ audio }: NavbarProps) {
 
       {/* Layer 3: Nav items */}
       <div
-        className={`fixed inset-0 z-42 flex flex-col justify-center gap-3 overflow-hidden py-24 ${
+        className={`fixed inset-0 z-42 flex flex-col justify-center gap-3 overflow-hidden px-0 py-16 sm:gap-4 sm:py-16 md:gap-0 md:py-24 lg:py-28 ${
           isLimeVisible ? "visible" : "invisible pointer-events-none"
         }`}
       >
@@ -208,7 +208,7 @@ export default function Navbar({ audio }: NavbarProps) {
             [...rects, ...rects].map((bg, j) => (
               <span
                 key={j}
-                className={`flex shrink-0 items-center justify-center rounded-xl px-3 py-1.5 text-base font-bold uppercase tracking-tight transition-colors duration-300 sm:rounded-2xl sm:px-5 sm:py-2 sm:text-3xl md:px-8 md:py-3 md:text-5xl lg:px-10 lg:text-7xl ${bg}`}
+                className={`flex shrink-0 items-center justify-center rounded-lg px-3 py-3 text-4xl font-bold uppercase tracking-tighter transition-colors duration-300 sm:rounded-xl sm:px-4 sm:py-4 sm:text-5xl sm:tracking-tight md:rounded-2xl md:px-6 md:py-0 md:text-6xl lg:px-10 lg:text-8xl ${bg}`}
               >
                 {link.label}
               </span>
@@ -217,7 +217,7 @@ export default function Navbar({ audio }: NavbarProps) {
           return (
             <div
               key={link.label}
-              className={`transition-all duration-500 ease-out ${
+              className={`md:flex-1 transition-all duration-500 ease-out ${
                 areItemsVisible
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-16 opacity-0"
@@ -231,12 +231,12 @@ export default function Navbar({ audio }: NavbarProps) {
               <a
                 href={link.href}
                 onClick={handleLinkClick}
-                className="group flex w-full items-stretch justify-center"
+                className="group flex w-full items-center justify-center md:h-full md:items-stretch"
               >
                 {/* Left ticker */}
                 <div className="flex flex-1 overflow-hidden">
                   <div
-                    className="flex h-full items-center gap-3"
+                    className="flex items-center gap-1.5 sm:gap-2 md:h-full md:items-stretch md:gap-2"
                     style={{
                       animation: `${evenRow ? "ticker-left" : "ticker-right"} ${speed}s linear infinite`,
                     }}
@@ -246,14 +246,14 @@ export default function Navbar({ audio }: NavbarProps) {
                 </div>
 
                 {/* Center */}
-                <span className="z-10 flex w-36 shrink-0 items-center justify-center whitespace-nowrap text-xl font-bold uppercase tracking-tight text-black transition-colors duration-300 group-hover:bg-black group-hover:text-lime sm:w-52 sm:text-3xl md:w-96 md:text-5xl lg:w-xl lg:text-7xl">
+                <span className="z-10 flex w-64 shrink-0 items-center justify-center whitespace-nowrap py-3 text-4xl font-bold uppercase tracking-tighter text-black transition-colors duration-300 group-hover:bg-black group-hover:text-lime sm:w-80 sm:py-4 sm:text-5xl sm:tracking-tight md:w-md md:py-0 md:text-6xl lg:w-xl lg:text-8xl">
                   {link.label}
                 </span>
 
                 {/* Right ticker */}
                 <div className="flex flex-1 overflow-hidden">
                   <div
-                    className="flex h-full items-center gap-3"
+                    className="flex items-center gap-1.5 sm:gap-2 md:h-full md:items-stretch md:gap-2"
                     style={{
                       animation: `${evenRow ? "ticker-right" : "ticker-left"} ${speed}s linear infinite`,
                     }}

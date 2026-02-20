@@ -43,7 +43,7 @@ export default function PageWrapper() {
         }}
       >
         <Navbar audio={audio} />
-        <Hero />
+        <Hero pageRevealed={revealPage} />
         <Features />
         <HowItWorks />
         <Testimonials />

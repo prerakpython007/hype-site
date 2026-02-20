@@ -3,7 +3,7 @@ const steps = [
     step: "01",
     title: "Download the App",
     description:
-      "Get Hype for free on iOS or Android. Create your account in seconds and you're ready to go.",
+      "Get HYPE! for free on iOS or Android. Create your account in seconds and you're ready to go.",
     color: "text-lime",
   },
   {
@@ -42,7 +42,7 @@ export default function HowItWorks() {
             Start building habits in minutes
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Getting started with Hype is simple. Four easy steps and you&apos;re
+            Getting started with HYPE! is simple. Four easy steps and you&apos;re
             on your way to a better you.
           </p>
         </div>

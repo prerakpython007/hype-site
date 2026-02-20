@@ -1,7 +1,7 @@
 const testimonials = [
   {
     quote:
-      "I've tried every habit app out there. Hype is the first one that actually made me stick with my morning routine for over 6 months.",
+      "I've tried every habit app out there. HYPE! is the first one that actually made me stick with my morning routine for over 6 months.",
     name: "Sarah Chen",
     role: "Fitness Enthusiast",
     initials: "SC",
@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     quote:
-      "The streak system is addictive in the best way. I went from reading 0 books to finishing 2 a month. Hype just hits different.",
+      "The streak system is addictive in the best way. I went from reading 0 books to finishing 2 a month. HYPE! just hits different.",
     name: "Marcus Johnson",
     role: "College Student",
     initials: "MJ",
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     quote:
-      "The community feature is what sets Hype apart. Having people cheer you on when you complete a habit is genuinely motivating.",
+      "The community feature is what sets HYPE! apart. Having people cheer you on when you complete a habit is genuinely motivating.",
     name: "Aisha Patel",
     role: "Wellness Coach",
     initials: "AP",
@@ -38,7 +38,7 @@ export default function Testimonials() {
             Loved by habit builders
           </h2>
           <p className="mt-4 text-lg text-muted">
-            See what real users are saying about their Hype journey.
+            See what real users are saying about their HYPE! journey.
           </p>
         </div>
 

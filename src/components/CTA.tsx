@@ -15,7 +15,7 @@ export default function CTA() {
               Ready to build better habits?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-              Join thousands of people already crushing their goals with Hype.
+              Join thousands of people already crushing their goals with <span className="font-obviously italic">HYPE!</span>
               Download for free and start your journey today.
             </p>
 
