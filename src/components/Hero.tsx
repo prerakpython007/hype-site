@@ -97,7 +97,7 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
         />
       </div>
 
-      {/* Mobile: Full background logos, no lamp (<md) */}
+      {/* Mobile: Full background logos (<md) */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden md:hidden">
         <LogoBackground animate={showLogos} mouseX={mousePos.x} mouseY={mousePos.y} mobile />
       </div>
@@ -145,7 +145,7 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
                   alt="App menu screen"
                   width={266}
                   height={560}
-                  className="h-[360px] w-[170px] object-cover sm:h-[440px] sm:w-[210px] md:h-[480px] md:w-[228px]"
+                  className="h-[440px] w-[210px] object-cover sm:h-[480px] sm:w-[228px] md:h-[480px] md:w-[228px]"
                 />
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
                   alt="Habit details screen"
                   width={266}
                   height={560}
-                  className="h-[360px] w-[170px] object-cover sm:h-[440px] sm:w-[210px] md:h-[480px] md:w-[228px]"
+                  className="h-[440px] w-[210px] object-cover sm:h-[480px] sm:w-[228px] md:h-[480px] md:w-[228px]"
                 />
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
               </div>
 
               {/* Video container */}
-              <div className="relative h-[360px] w-[170px] sm:h-[440px] sm:w-[210px] md:h-[480px] md:w-[228px]">
+              <div className="relative h-[440px] w-[210px] sm:h-[480px] sm:w-[228px] md:h-[480px] md:w-[228px]">
                 {videos.map((src, i) => (
                   <video
                     key={i}
@@ -258,7 +258,7 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
         <div className={`text-center transition-all duration-1000 ease-out md:hidden ${
           showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
-          <h1 className="text-2xl font-bold tracking-tight text-white xs:text-3xl sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Build Better Habits with{" "}
             <span className="font-obviously italic text-lime">HYPE!</span>
           </h1>
