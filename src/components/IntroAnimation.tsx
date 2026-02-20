@@ -61,7 +61,7 @@ export default function IntroAnimation({ onComplete, onRevealPage, onMusicStart 
   }, [onComplete, onRevealPage]);
 
   const playMusic = useCallback(() => {
-    const audio = new Audio("/audio/crazy-train.mp3");
+    const audio = new Audio("/audio/final-crazy.mp3");
     audio.volume = 0.6;
     audio.play().catch(() => {});
     audioRef.current = audio;

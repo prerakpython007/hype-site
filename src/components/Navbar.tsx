@@ -2,24 +2,25 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useApp } from "./AppProvider";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Get Started", href: "#cta" },
+  { label: "Features", href: "/#features" },
+  { label: "How it Works", href: "/#how-it-works" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Get Started", href: "/#cta" },
 ];
 
 type Stage = "closed" | "black" | "lime" | "items" | "closing-items" | "closing-lime" | "closing-black";
 
-interface NavbarProps {
-  audio: HTMLAudioElement | null;
-}
-
-export default function Navbar({ audio }: NavbarProps) {
+export default function Navbar() {
+  const { audio, introDone, revealPage } = useApp();
   const [open, setOpen] = useState(false);
   const [stage, setStage] = useState<Stage>("closed");
   const [muted, setMuted] = useState(false);
+
+  const showNavbar = introDone || revealPage;
 
   const toggleMute = useCallback(() => {
     if (!audio) return;
@@ -33,17 +34,12 @@ export default function Navbar({ audio }: NavbarProps) {
   }, [audio, muted]);
 
   const handleClose = useCallback(() => {
-    // Stage 1: items fade out
     setStage("closing-items");
-    // Stage 2: lime slides up
     setTimeout(() => setStage("closing-lime"), 300);
-    // Stage 3: black slides up
     setTimeout(() => setStage("closing-black"), 700);
-    // Done
     setTimeout(() => setStage("closed"), 1200);
   }, []);
 
-  // Lock scroll when menu is open
   useEffect(() => {
     if (stage !== "closed") {
       document.body.style.overflow = "hidden";
@@ -57,7 +53,6 @@ export default function Navbar({ audio }: NavbarProps) {
 
   useEffect(() => {
     if (open) {
-      // Opening: black -> lime -> items
       setStage("black");
       const t1 = setTimeout(() => setStage("lime"), 400);
       const t2 = setTimeout(() => setStage("items"), 800);
@@ -102,12 +97,14 @@ export default function Navbar({ audio }: NavbarProps) {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-transparent">
+      <nav className={`fixed top-0 z-300 w-full bg-transparent transition-opacity duration-500 ${
+        showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           {/* Logo */}
-          <a href="#" className="relative z-50">
+          <Link href="/" className="relative z-50">
             <Image src="/hype-logo.png" alt="Hype logo" width={72} height={72} />
-          </a>
+          </Link>
 
           <div className="relative z-50 flex items-center gap-4">
             {/* Mute button */}
@@ -163,14 +160,14 @@ export default function Navbar({ audio }: NavbarProps) {
 
       {/* Layer 1: Black */}
       <div
-        className={`fixed inset-0 z-40 bg-black transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 z-250 bg-black transition-transform duration-500 ease-in-out ${
           isBlackVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       />
 
       {/* Layer 2: Lime */}
       <div
-        className={`fixed inset-0 z-41 bg-lime transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 z-251 bg-lime transition-transform duration-500 ease-in-out ${
           isLimeVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       />
@@ -189,7 +186,7 @@ export default function Navbar({ audio }: NavbarProps) {
 
       {/* Layer 3: Nav items */}
       <div
-        className={`fixed inset-0 z-42 flex flex-col justify-center gap-3 overflow-hidden px-0 py-16 sm:gap-4 sm:py-16 md:gap-0 md:py-24 lg:py-28 ${
+        className={`fixed inset-0 z-252 flex flex-col justify-center gap-3 overflow-hidden px-0 py-16 sm:gap-4 sm:py-16 md:gap-0 md:py-24 lg:py-28 ${
           isLimeVisible ? "visible" : "invisible pointer-events-none"
         }`}
       >
@@ -228,7 +225,7 @@ export default function Navbar({ audio }: NavbarProps) {
                   : `${(navLinks.length - 1 - i) * 60}ms`,
               }}
             >
-              <a
+              <Link
                 href={link.href}
                 onClick={handleLinkClick}
                 className="group flex w-full items-center justify-center md:h-full md:items-stretch"
@@ -261,7 +258,7 @@ export default function Navbar({ audio }: NavbarProps) {
                     {renderRects(sides)}
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           );
         })}

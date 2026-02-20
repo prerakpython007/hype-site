@@ -135,8 +135,9 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
             className="absolute -left-28 top-4 z-0 hidden sm:-left-32 md:-left-40 md:block lg:-left-48"
             style={{ perspective: "800px" }}
           >
+            <div className="pointer-events-none absolute -inset-6 rounded-4xl bg-pink/15 blur-2xl" />
             <div
-              className="rounded-[2rem] border-[5px] border-[#2a2a2a] bg-black p-0.5 shadow-xl shadow-black/40 sm:rounded-[2.5rem] sm:border-[6px] sm:p-0.75"
+              className="relative rounded-4xl border-[5px] border-[#2a2a2a] bg-black p-0.5 shadow-xl shadow-black/40 sm:rounded-[2.5rem] sm:border-[6px] sm:p-0.75"
               style={{ transform: "rotateY(25deg)" }}
             >
               <div className="overflow-hidden rounded-[1.6rem] bg-black sm:rounded-[2rem]">
@@ -156,8 +157,9 @@ export default function Hero({ pageRevealed = false }: { pageRevealed?: boolean 
             className="absolute -right-28 top-4 z-0 hidden sm:-right-32 md:-right-40 md:block lg:-right-48"
             style={{ perspective: "800px" }}
           >
+            <div className="pointer-events-none absolute -inset-6 rounded-4xl bg-gold/15 blur-2xl" />
             <div
-              className="rounded-[2rem] border-[5px] border-[#2a2a2a] bg-black p-0.5 shadow-xl shadow-black/40 sm:rounded-[2.5rem] sm:border-[6px] sm:p-0.75"
+              className="relative rounded-4xl border-[5px] border-[#2a2a2a] bg-black p-0.5 shadow-xl shadow-black/40 sm:rounded-[2.5rem] sm:border-[6px] sm:p-0.75"
               style={{ transform: "rotateY(-25deg)" }}
             >
               <div className="overflow-hidden rounded-[1.6rem] bg-black sm:rounded-[2rem]">

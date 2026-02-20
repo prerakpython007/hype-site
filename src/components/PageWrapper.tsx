@@ -1,23 +1,20 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
+import { useApp } from "./AppProvider";
 import IntroAnimation from "./IntroAnimation";
-import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Features from "./Features";
 import HowItWorks from "./HowItWorks";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
-import Footer from "./Footer";
 
 export default function PageWrapper() {
-  const [introDone, setIntroDone] = useState(false);
-  const [revealPage, setRevealPage] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const { introDone, revealPage, setIntroDone, setRevealPage, setAudio } = useApp();
 
   const handleMusicStart = useCallback((audioEl: HTMLAudioElement) => {
     setAudio(audioEl);
-  }, []);
+  }, [setAudio]);
 
   return (
     <>
@@ -42,13 +39,11 @@ export default function PageWrapper() {
             : "none",
         }}
       >
-        <Navbar audio={audio} />
         <Hero pageRevealed={revealPage} />
         <Features />
         <HowItWorks />
         <Testimonials />
         <CTA />
-        <Footer />
       </div>
     </>
   );

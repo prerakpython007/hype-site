@@ -1,9 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const footerLinks = {
-  App: ["Features", "Pricing", "Changelog", "Download iOS", "Download Android"],
-  Company: ["About", "Blog", "Careers", "Press", "Contact"],
-  Legal: ["Privacy", "Terms", "Security"],
+  App: [
+    { label: "Features", href: "/#features" },
+    { label: "How it Works", href: "/#how-it-works" },
+    { label: "Testimonials", href: "/#testimonials" },
+    { label: "Get Started", href: "/#cta" },
+  ],
+  Company: [
+    { label: "About", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Contact", href: "#" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Security", href: "#" },
+  ],
 };
 
 export default function Footer() {
@@ -13,10 +27,10 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <a href="#" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white">
+            <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white">
               <Image src="/hype-logo.png" alt="Hype logo" width={32} height={32} />
               <span className="font-obviously italic">HYPE!</span>
-            </a>
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               The habit tracker that keeps you going. Build better habits, stay
               consistent, and become your best self.
@@ -29,13 +43,13 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white">{category}</h4>
               <ul className="mt-4 space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
                       className="text-sm text-muted transition-colors hover:text-white"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
