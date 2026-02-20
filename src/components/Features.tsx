@@ -114,7 +114,7 @@ function BentoFeatureCard({
   index: number;
 }) {
   const colors = colorMap[feature.color];
-  const images = feature.bentoImages;
+  const images = feature.bentoImages!;
 
   return (
     <div className="sticky top-0" style={{ zIndex: index + 1 }}>
